@@ -1,0 +1,5 @@
+# Project exclude paths
+/elasticsearch/target/
+/redis/target/
+/spark_common/target/
+/spark_streaming/target/

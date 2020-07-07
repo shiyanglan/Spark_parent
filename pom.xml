@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>qf.SparkTest.parent</groupId>
+    <artifactId>Spark_parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>redis</module>
+        <module>elasticsearch</module>
+    </modules>
+
+    <!--    <modules>-->
+<!--        <module>spark_core</module>-->
+<!--        <module>spark_sql</module>-->
+<!--        <module>kafka</module>-->
+<!--        <module>spark_streaming</module>-->
+<!--        <module>spark_common</module>-->
+<!--    </modules>-->
+
+<!--    <properties>-->
+<!--        <httpclient.version>4.5.2</httpclient.version>-->
+<!--        <htmlcleaner.version>2.16</htmlcleaner.version>-->
+
+<!--        &lt;!&ndash;自己加的 固定1.8版本&ndash;&gt;-->
+<!--&lt;!&ndash;        <maven.compiler.source>1.8</maven.compiler.source>&ndash;&gt;-->
+<!--&lt;!&ndash;        <maven.compiler.target>1.8</maven.compiler.target>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;不同的&ndash;&gt;-->
+<!--        <spark.version>2.2.0</spark.version>-->
+<!--        <junit.version>4.12</junit.version>-->
+
+<!--&lt;!&ndash;        <spark.version>2.2.2</spark.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <junit.version>3.8.2</junit.version>&ndash;&gt;-->
+
+
+<!--        &lt;!&ndash;相同的&ndash;&gt;-->
+<!--        <scala.version>2.11.8</scala.version>-->
+<!--        <mysql.version>5.1.47</mysql.version>-->
+<!--        <curator.version>2.6.0</curator.version>-->
+<!--        <kafka.version>1.1.1</kafka.version>-->
+<!--        <assembly.version>3.2.0</assembly.version>-->
+<!--        <scala-tools.version>2.15.2</scala-tools.version>-->
+<!--        <eclipse.version>2.10</eclipse.version>-->
+<!--        <log4j.version>1.2.17</log4j.version>-->
+
+<!--        &lt;!&ndash;没有的&ndash;&gt;-->
+<!--&lt;!&ndash;        <hbase.version>1.2.1</hbase.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <scala_jdbc.version>3.2.0</scala_jdbc.version>&ndash;&gt;-->
+<!--    </properties>-->
+
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.httpcomponents</groupId>-->
+<!--                <artifactId>httpclient</artifactId>-->
+<!--                <version>${httpclient.version}</version>-->
+<!--            </dependency>-->
+
+<!--            &lt;!&ndash; htmlcleaner,解析网页内容+xpath(解析xml文件) &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>net.sourceforge.htmlcleaner</groupId>-->
+<!--                <artifactId>htmlcleaner</artifactId>-->
+<!--                <version>${htmlcleaner.version}</version>-->
+<!--            </dependency>-->
+
+
+
+<!--            &lt;!&ndash;相同的&ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>mysql</groupId>-->
+<!--                <artifactId>mysql-connector-java</artifactId>-->
+<!--                <version>${mysql.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.curator</groupId>-->
+<!--                <artifactId>curator-client</artifactId>-->
+<!--                <version>${curator.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.curator</groupId>-->
+<!--                <artifactId>curator-framework</artifactId>-->
+<!--                <version>${curator.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.kafka</groupId>-->
+<!--                <artifactId>kafka_2.11</artifactId>-->
+<!--                <version>${kafka.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                <version>${assembly.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.scala-tools</groupId>-->
+<!--                <artifactId>maven-scala-plugin</artifactId>-->
+<!--                <version>${scala-tools.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-eclipse-plugin</artifactId>-->
+<!--                <version>${eclipse.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>log4j</groupId>-->
+<!--                <artifactId>log4j</artifactId>-->
+<!--                <version>${log4j.version}</version>-->
+<!--            </dependency>-->
+
+
+
+
+<!--            &lt;!&ndash;不同的&ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>junit</groupId>-->
+<!--                <artifactId>junit</artifactId>-->
+<!--                <version>${junit.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-core_2.11</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-sql_2.11</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-streaming_2.11</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-hive_2.11</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.apache.spark</groupId>-->
+<!--                <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>-->
+<!--                <version>${spark.version}</version>-->
+<!--            </dependency>-->
+
+
+
+
+<!--            &lt;!&ndash;没有的&ndash;&gt;-->
+<!--            &lt;!&ndash;hbase &ndash;&gt;-->
+<!--&lt;!&ndash;            <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;                <groupId>org.apache.hbase</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;                <artifactId>hbase-server</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;                <version>${hbase.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;            </dependency>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            &lt;!&ndash;scala jdbc &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;                <groupId>org.scalikejdbc</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;                <artifactId>scalikejdbc_2.11</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;                <version>${scala_jdbc.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;            </dependency>&ndash;&gt;-->
+
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
+
+    <properties>
+        <spark.version>2.2.2</spark.version>
+        <junit.version>3.8.2</junit.version>
+        <scala.version>2.11.8</scala.version>
+        <mysql.version>5.1.47</mysql.version>
+        <curator.version>2.6.0</curator.version>
+        <hbase.version>1.2.1</hbase.version>
+        <scala_jdbc.version>3.2.0</scala_jdbc.version>
+        <kafka.version>1.1.1</kafka.version>
+        <assembly.version>3.2.0</assembly.version>
+        <scala-tools.version>2.15.2</scala-tools.version>
+        <eclipse.version>2.10</eclipse.version>
+        <log4j.version>1.2.17</log4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apahce.spark</groupId>
+                <artifactId>spark-sql_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-hive_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- curator -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!-- hbase -->
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-server</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <!-- scala jdbc -->
+            <dependency>
+                <groupId>org.scalikejdbc</groupId>
+                <artifactId>scalikejdbc_2.11</artifactId>
+                <version>${scala_jdbc.version}</version>
+            </dependency>
+
+            <!-- kafka jdbc -->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.kafka</groupId>-->
+<!--                <artifactId>kafka_2.11</artifactId>-->
+<!--                <version>${kafka.version}</version>-->
+<!--            </dependency>-->
+
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${assembly.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>${scala-tools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${eclipse.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>org.slf4j</groupId>-->
+<!--                <artifactId>slf4j-api</artifactId>-->
+<!--                <version>1.7.25</version>-->
+<!--            </dependency>-->
+        </dependencies>
+
+    </dependencyManagement>
+
+
+    <!--<properties>
+        <httpclient.version>4.5.2</httpclient.version>
+        <htmlcleaner.version>2.16</htmlcleaner.version>
+        <junit.version>4.12</junit.version>
+        <spark.version>2.2.0</spark.version>
+        <scala.version>2.11.8</scala.version>
+        <mysql.version>5.1.47</mysql.version>
+        <assembly.version>3.2.0</assembly.version>
+        <scala-tools.version>2.15.2</scala-tools.version>
+        <eclipse.version>2.10</eclipse.version>
+        <kafka.version>1.1.1</kafka.version>
+        <curator.version>2.6.0</curator.version>
+        <log4j.version>1.2.17</log4j.version>
+    </properties>
+
+    &lt;!&ndash; 依赖管理器：存放依赖管理器中的依赖不能直接使用 &ndash;&gt;
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+
+            &lt;!&ndash; zookeeper curtor &ndash;&gt;
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            &lt;!&ndash; kafka：MQ &ndash;&gt;
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka_2.11</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
+            &lt;!&ndash; httpclient:爬虫 &ndash;&gt;
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+            &lt;!&ndash; htmlcleaner,解析网页内容+xpath(解析xml文件) &ndash;&gt;
+            <dependency>
+                <groupId>net.sourceforge.htmlcleaner</groupId>
+                <artifactId>htmlcleaner</artifactId>
+                <version>${htmlcleaner.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+
+            &lt;!&ndash; spark score &ndash;&gt;
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            &lt;!&ndash; spark sql&ndash;&gt;
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-hive_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            &lt;!&ndash; spark streaming &ndash;&gt;
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming_2.11</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+
+&lt;!&ndash;            &lt;!&ndash; spark streaming _ kafka &ndash;&gt;&ndash;&gt;
+&lt;!&ndash;            <dependency>&ndash;&gt;
+&lt;!&ndash;                <groupId>org.apache.spark</groupId>&ndash;&gt;
+&lt;!&ndash;                <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>&ndash;&gt;
+&lt;!&ndash;                <version>2.2.2</version>&ndash;&gt;
+&lt;!&ndash;            </dependency>&ndash;&gt;
+
+            &lt;!&ndash; mysql jdbc &ndash;&gt;
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            &lt;!&ndash; log4j &ndash;&gt;
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            &lt;!&ndash; maven plugin &ndash;&gt;
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${assembly.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>${scala-tools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${eclipse.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>-->
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
